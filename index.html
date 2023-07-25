@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.0/dist/aframe-environment-component.min.js"></script>
+    
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <audio id="thunk" src="https://cdn.glitch.global/fbde764c-872f-40ef-b662-fbd57c1e95aa/458461__prometheus888__carengine.wav?v=1690273668460"></audio>
+      </a-assets>
+      
+      <a-entity environment = "preset: contact"></a-entity>
+      
+      <a-box id="box-a" position="-1 2.5 -3" color="red" class="collidable"></a-box>
+              
+      <a-entity id="cameraRig">
+        <a-entity camera position="0 1.6 0">
+          <a-text value="debug" position="0 0 -3"></a-text>
+        </a-entity>
+        <a-entity oculus-touch-controls="hand: left"
+                  collider-check raycaster="objects: .collidable; showLine: true"></a-entity>
+        <a-entity oculus-touch-controls="hand: right"
+                  collider-check raycaster="objects: .collidable; showLine: true"></a-entity>
+      </a-entity>
+      
+
+    </a-scene>
+  </body>
+</html>
